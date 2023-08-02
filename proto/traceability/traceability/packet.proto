@@ -1,0 +1,99 @@
+syntax = "proto3";
+package traceability.traceability;
+
+// this line is used by starport scaffolding # proto/packet/import
+
+option go_package = "traceability/x/traceability/types";
+
+message TraceabilityPacketData {
+    oneof packet {
+        NoData noData = 1;
+        // this line is used by starport scaffolding # ibc/packet/proto/field
+				AllowSellPacketData allowSellPacket = 9; // this line is used by starport scaffolding # ibc/packet/proto/field/number
+				AddCustomerPacketData addCustomerPacket = 8; // this line is used by starport scaffolding # ibc/packet/proto/field/number
+				SellDrugPacketData sellDrugPacket = 7; // this line is used by starport scaffolding # ibc/packet/proto/field/number
+				ForbidShipPacketData forbidShipPacket = 6; // this line is used by starport scaffolding # ibc/packet/proto/field/number
+				AllowShipPacketData allowShipPacket = 5; // this line is used by starport scaffolding # ibc/packet/proto/field/number
+				DestroyDrugPacketData destroyDrugPacket = 4; // this line is used by starport scaffolding # ibc/packet/proto/field/number
+				SendDrugPacketData sendDrugPacket = 3; // this line is used by starport scaffolding # ibc/packet/proto/field/number
+				RequestShipPacketData requestShipPacket = 2; // this line is used by starport scaffolding # ibc/packet/proto/field/number
+    }
+}
+
+message NoData {
+}
+
+// RequestShipPacketData defines a struct for the packet payload
+message RequestShipPacketData {
+  string dic = 1;
+  string drugprof = 2;
+  string termofvalidity = 3;
+  string pharmacy = 4;
+  string creator = 5;
+}
+
+// RequestShipPacketAck defines a struct for the packet acknowledgment
+message RequestShipPacketAck {
+	}
+// SendDrugPacketData defines a struct for the packet payload
+message SendDrugPacketData {
+  string dic = 1;
+}
+
+// SendDrugPacketAck defines a struct for the packet acknowledgment
+message SendDrugPacketAck {
+	}
+// DestroyDrugPacketData defines a struct for the packet payload
+message DestroyDrugPacketData {
+  string dic = 1;
+}
+
+// DestroyDrugPacketAck defines a struct for the packet acknowledgment
+message DestroyDrugPacketAck {
+	}
+// AllowShipPacketData defines a struct for the packet payload
+message AllowShipPacketData {
+  string dic = 1;
+}
+
+// AllowShipPacketAck defines a struct for the packet acknowledgment
+message AllowShipPacketAck {
+	}
+// ForbidShipPacketData defines a struct for the packet payload
+message ForbidShipPacketData {
+  string dic = 1;
+}
+
+// ForbidShipPacketAck defines a struct for the packet acknowledgment
+message ForbidShipPacketAck {
+	}
+// SellDrugPacketData defines a struct for the packet payload
+message SellDrugPacketData {
+  string dic = 1;
+}
+
+// SellDrugPacketAck defines a struct for the packet acknowledgment
+message SellDrugPacketAck {
+	}
+// AddCustomerPacketData defines a struct for the packet payload
+message AddCustomerPacketData {
+  string dic = 1;
+  string customerid = 2;
+}
+
+// AddCustomerPacketAck defines a struct for the packet acknowledgment
+message AddCustomerPacketAck {
+	}
+// AllowSellPacketData defines a struct for the packet payload
+message AllowSellPacketData {
+  string dic = 1;
+  string drugprof = 2;
+  string termofvalidity = 3;
+  string pharmacy = 4;
+  string manufacturer = 5;
+}
+
+// AllowSellPacketAck defines a struct for the packet acknowledgment
+message AllowSellPacketAck {
+	}
+// this line is used by starport scaffolding # ibc/packet/proto/message
